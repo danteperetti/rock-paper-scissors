@@ -19,4 +19,12 @@ function getComputerChoice() {
     }
 }
 
-// 
+// player inputs either rock, paper, or scissors
+// a function takes that value and the getComputerChoice functions as arguments
+// the two choices are compared and the winner is decided
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+
+function playGame(playerSelection, computerSelection) {
+
+}
