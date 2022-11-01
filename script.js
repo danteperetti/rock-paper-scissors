@@ -6,16 +6,16 @@ function getComputerChoice() {
 
     switch (randomChoice) {
         case 0:
-            return console.log("Rock");
+            return "Rock";
             break;
         case 1:
-            return console.log("Paper");
+            return "Paper";
             break;
         case 2:
-            return console.log("Scissors");
+            return "Scissors";
             break;
         default:
-            return console.log("Nah bruh, something's fishy.");
+            return "Nah bruh, something's fishy.";
     }
 }
 
@@ -26,5 +26,10 @@ const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 
 function playGame(playerSelection, computerSelection) {
+    const lowerPlayer = playerSelection.toLowerCase();
+    const lowerComputer = computerSelection.toLowerCase();
 
+    
 }
+
+playGame(playerSelection, computerSelection);
