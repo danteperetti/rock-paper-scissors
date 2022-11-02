@@ -29,7 +29,21 @@ function playGame(playerSelection, computerSelection) {
     const lowerPlayer = playerSelection.toLowerCase();
     const lowerComputer = computerSelection.toLowerCase();
 
-    
+    if (lowerPlayer === lowerComputer) {
+        return "It's a tie.";
+    } else if (lowerPlayer === "rock" && lowerComputer === "paper") {
+        return "You lose. Paper defeats rock."
+    } else if (lowerPlayer === "rock" && lowerComputer === "scissors") {
+        return "You win! Rock defeats scissors!";
+    } else if (lowerPlayer === "paper" && lowerComputer === "rock") {
+        return "You win! Paper defeats rock!";
+    } else if (lowerPlayer === "paper" && lowerComputer === "scissors") {
+        return "You lose. Scissors defeats paper.";
+    } else if (lowerPlayer === "scissors" && lowerComputer === "rock") {
+        return "You lose. Rock defeats scissors.";
+    } else {
+        return "You win! Scissors defeats paper!";
+    }
 }
 
-playGame(playerSelection, computerSelection);
+console.log(playGame(playerSelection, computerSelection));
