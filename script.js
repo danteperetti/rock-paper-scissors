@@ -49,11 +49,10 @@ function playGame(playerSelection, computerSelection) {
 // every loop assign a point to the winner
 // congratulate the winner after 5 games
 function game() {
+    let playerScore = 0;
+    let computerScore = 0;
     for (let i = 0; i < 5; i++) {
-        let playerScore = 0;
-        let computerScore = 0;
-
-        const playerSelection = "rock";
+        const playerSelection = prompt("Choose rock, paper, or scissors: ");
         const computerSelection = getComputerChoice();
         playGame(playerSelection,computerSelection);
 
@@ -80,6 +79,8 @@ function game() {
             playerScore++;
         }
 
+        console.log(playGame(playerSelection,computerSelection));
+        console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
     }
 }
 
