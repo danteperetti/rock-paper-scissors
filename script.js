@@ -82,6 +82,14 @@ function game() {
         console.log(playGame(playerSelection,computerSelection));
         console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
     }
+
+    if (playerScore >= 3) {
+        console.log("Congrats! You are the winner!");
+    } else if (computerScore >= 3) {
+        console.log("You have been defeated by the computer.");
+    } else {
+        console.log("It's a tie.");
+    }
 }
 
 game();
