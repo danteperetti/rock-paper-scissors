@@ -46,4 +46,18 @@ function playGame(playerSelection, computerSelection) {
     }
 }
 
-console.log(playGame(playerSelection, computerSelection));
+// use a function to make the game best 3 out of 5
+// create a function and call the playGame function 
+// loop through the function 5 times
+// every loop assign a point to the winner
+// congratulate the winner after 5 games
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playGame(playerSelection, computerSelection);
+        // find a place to insert the increment variable
+        // insert a conditional statement to keep score
+
+    }
+}
+
+console.log(game());
