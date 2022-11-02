@@ -57,7 +57,28 @@ function game() {
         const computerSelection = getComputerChoice();
         playGame(playerSelection,computerSelection);
 
-         
+        if (playGame(playerSelection,computerSelection) === "It's a tie.") {
+            playerScore = playerScore + 0;
+            computerScore = computerScore + 0;
+        } else if (playGame(playerSelection,computerSelection) === 
+            "You lose. Paper defeats rock.") {
+            computerScore++;
+        } else if (playGame(playerSelection,computerSelection) === 
+            "You lose. Rock defeats scissors.") {
+            computerScore++;
+        } else if (playGame(playerSelection,computerSelection) === 
+            "You lose. Scissors defeats paper.") {
+            computerScore++;
+        } else if (playGame(playerSelection,computerSelection) === 
+            "You win! Paper defeats rock!") {
+            playerScore++;
+        } else if (playGame(playerSelection,computerSelection) === 
+            "You win! Rock defeats scissors!") {
+            playerScore++;
+        } else if (playGame(playerSelection,computerSelection) === 
+            "You win! Scissors defeats paper!") {
+            playerScore++;
+        }
 
     }
 }
