@@ -22,9 +22,6 @@ function getComputerChoice() {
 // player inputs either rock, paper, or scissors
 // a function takes that value and the getComputerChoice functions as arguments
 // the two choices are compared and the winner is decided
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-
 function playGame(playerSelection, computerSelection) {
     const lowerPlayer = playerSelection.toLowerCase();
     const lowerComputer = computerSelection.toLowerCase();
@@ -53,11 +50,16 @@ function playGame(playerSelection, computerSelection) {
 // congratulate the winner after 5 games
 function game() {
     for (let i = 0; i < 5; i++) {
-        playGame(playerSelection, computerSelection);
-        // find a place to insert the increment variable
-        // insert a conditional statement to keep score
+        let playerScore = 0;
+        let computerScore = 0;
+
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+        playGame(playerSelection,computerSelection);
+
+         
 
     }
 }
 
-console.log(game());
+game();
