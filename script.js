@@ -25,7 +25,7 @@ function getComputerChoice() {
 
 function playGame() {
     const player = this.id;
-    const computer = getComputerChoice.toLowerCase();
+    const computer = getComputerChoice().toLowerCase();
 
     if (player === computer) {
         return "It's a tie.";
