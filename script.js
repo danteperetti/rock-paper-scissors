@@ -1,6 +1,10 @@
-// generate 3 random values for the computers' choices
-// assign values to rock, paper, and scissors
-// based on whichever value is generated, display a value
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+rock.addEventListener('click', playGame);
+paper.addEventListener('click', playGame);
+scissors.addEventListener('click', playGame);
+
 function getComputerChoice() {
     randomChoice = Math.floor(Math.random() * 3);
 
@@ -19,36 +23,28 @@ function getComputerChoice() {
     }
 }
 
-// player inputs either rock, paper, or scissors
-// a function takes that value and the getComputerChoice functions as arguments
-// the two choices are compared and the winner is decided
-function playGame(playerSelection, computerSelection) {
-    const lowerPlayer = playerSelection.toLowerCase();
-    const lowerComputer = computerSelection.toLowerCase();
+function playGame() {
+    const player = this.id;
+    const computer = getComputerChoice.toLowerCase();
 
-    if (lowerPlayer === lowerComputer) {
+    if (player === computer) {
         return "It's a tie.";
-    } else if (lowerPlayer === "rock" && lowerComputer === "paper") {
+    } else if (player === "rock" && computer === "paper") {
         return "You lose. Paper defeats rock."
-    } else if (lowerPlayer === "rock" && lowerComputer === "scissors") {
+    } else if (player === "rock" && computer === "scissors") {
         return "You win! Rock defeats scissors!";
-    } else if (lowerPlayer === "paper" && lowerComputer === "rock") {
+    } else if (player === "paper" && computer === "rock") {
         return "You win! Paper defeats rock!";
-    } else if (lowerPlayer === "paper" && lowerComputer === "scissors") {
+    } else if (player === "paper" && computer === "scissors") {
         return "You lose. Scissors defeats paper.";
-    } else if (lowerPlayer === "scissors" && lowerComputer === "rock") {
+    } else if (player === "scissors" && computer === "rock") {
         return "You lose. Rock defeats scissors.";
     } else {
         return "You win! Scissors defeats paper!";
     }
 }
 
-// use a function to make the game best 3 out of 5
-// create a function and call the playGame function 
-// loop through the function 5 times
-// every loop assign a point to the winner
-// congratulate the winner after 5 games
-function game() {
+/*function game() {
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 5; i++) {
@@ -90,6 +86,4 @@ function game() {
     } else {
         console.log("It's a tie.");
     }
-}
-
-game();
+}*/
