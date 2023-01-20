@@ -1,6 +1,7 @@
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const div = document.querySelector('div');
 rock.addEventListener('click', playGame);
 paper.addEventListener('click', playGame);
 scissors.addEventListener('click', playGame);
@@ -28,7 +29,7 @@ function playGame() {
     const computer = getComputerChoice().toLowerCase();
 
     if (player === computer) {
-        return "It's a tie.";
+        "It's a tie.";
     } else if (player === "rock" && computer === "paper") {
         return "You lose. Paper defeats rock."
     } else if (player === "rock" && computer === "scissors") {
