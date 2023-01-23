@@ -1,3 +1,5 @@
+let playerScore = 0;
+let computerScore = 0;
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
@@ -27,64 +29,36 @@ function getComputerChoice() {
 function playGame() {
     const player = this.id;
     const computer = getComputerChoice().toLowerCase();
-
     if (player === computer) {
-        div.textContent = "It's a tie.";
+        div.textContent = `It's a tie. You: ${playerScore} Computer: ${computerScore}`;
     } else if (player === "rock" && computer === "paper") {
-        div.textContent = "You lose. Paper defeats rock."
+        computerScore++;
+        div.textContent = `You lose. Paper defeats rock. You: ${playerScore} Computer: ${computerScore}`;
     } else if (player === "rock" && computer === "scissors") {
-        div.textContent = "You win! Rock defeats scissors!";
+        playerScore++;
+        div.textContent = `You win! Rock defeats scissors! You: ${playerScore} Computer: ${computerScore}`;
     } else if (player === "paper" && computer === "rock") {
-        div.textContent = "You win! Paper defeats rock!";
+        playerScore++;
+        div.textContent = `You win! Paper defeats rock! You: ${playerScore} Computer: ${computerScore}`;
     } else if (player === "paper" && computer === "scissors") {
-        div.textContent = "You lose. Scissors defeats paper.";
+        computerScore++;
+        div.textContent = `You lose. Scissors defeats paper. You: ${playerScore} Computer: ${computerScore}`;
     } else if (player === "scissors" && computer === "rock") {
-        div.textContent = "You lose. Rock defeats scissors.";
+        computerScore++;
+        div.textContent = `You lose. Rock defeats scissors. You: ${playerScore} Computer: ${computerScore}`;
     } else {
-        div.textContent = "You win! Scissors defeats paper!";
+        playerScore++;
+        div.textContent = `You win! Scissors defeats paper! You: ${playerScore} Computer: ${computerScore}`;
+    }
+    if (playerScore === 5) {
+        div.textContent = `You are the winner! The final score is ${playerScore}-${computerScore}`;
+        rock.removeEventListener('click', playGame);
+        paper.removeEventListener('click', playGame);
+        scissors.removeEventListener('click', playGame);
+    } else if (computerScore === 5) {
+        div.textContent = `You are the loser! The final score is ${computerScore}-${playerScore}`;
+        rock.removeEventListener('click', playGame);
+        paper.removeEventListener('click', playGame);
+        scissors.removeEventListener('click', playGame);
     }
 }
-
-/*function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Choose rock, paper, or scissors: ");
-        const computerSelection = getComputerChoice();
-        playGame(playerSelection,computerSelection);
-
-        if (playGame(playerSelection,computerSelection) === "It's a tie.") {
-            playerScore = playerScore + 0;
-            computerScore = computerScore + 0;
-        } else if (playGame(playerSelection,computerSelection) === 
-            "You lose. Paper defeats rock.") {
-            computerScore++;
-        } else if (playGame(playerSelection,computerSelection) === 
-            "You lose. Rock defeats scissors.") {
-            computerScore++;
-        } else if (playGame(playerSelection,computerSelection) === 
-            "You lose. Scissors defeats paper.") {
-            computerScore++;
-        } else if (playGame(playerSelection,computerSelection) === 
-            "You win! Paper defeats rock!") {
-            playerScore++;
-        } else if (playGame(playerSelection,computerSelection) === 
-            "You win! Rock defeats scissors!") {
-            playerScore++;
-        } else if (playGame(playerSelection,computerSelection) === 
-            "You win! Scissors defeats paper!") {
-            playerScore++;
-        }
-
-        console.log(playGame(playerSelection,computerSelection));
-        console.log(`Player Score: ${playerScore} Computer Score: ${computerScore}`);
-    }
-
-    if (playerScore >= 3) {
-        console.log("Congrats! You are the winner!");
-    } else if (computerScore >= 3) {
-        console.log("You have been defeated by the computer.");
-    } else {
-        console.log("It's a tie.");
-    }
-}*/
